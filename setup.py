@@ -14,7 +14,7 @@ open(fp, 'wt', encoding='utf8').write(text.replace('#include "basisu_astc_decomp
 
 extensions = [
     Extension(
-        name="astc_decomp",
+        name="astc_decomp_faster",
         sources=[
             "astc_decomp.pyx",
             "astc_dec/astc_decomp.cpp",
