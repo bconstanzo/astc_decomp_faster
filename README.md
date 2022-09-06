@@ -1,3 +1,9 @@
+**bconstanzo:** this is a fork of K0lb3's work focused on improving performance by adding some Cython magic (types, which took a bit of effort to get right). Since it completely removes python from the hot loop (and almost all of the decompression function) it achieves some nice speedups (6-8 times faster). Any bottlenecks would then be inside the C++ functions, or your compilers ability to optimize said code.
+
+The main reason I'm making this fork is that iLEAPP had the astc_decomp module as a bottleneck at the time of release, and I worked a couple of weeks into improving it. There may be better alternatives for ASTC decompression out there.
+
+**K0lb3's original readme follows:**
+
 # ASTC_Decomp
 An ASTC decoder for PIL.
 
