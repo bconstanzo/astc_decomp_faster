@@ -72,7 +72,7 @@ jobs:
 
       # Deploy
       - name: Publish
-        if: success() && runner.os != 'Linux' && github.event_name == 'push'
+        if: success() && runner.os != 'Linux'
         env:
           TWINE_USERNAME: __token__
           TWINE_PASSWORD: ${{ secrets.PYPI_TOKEN }}
