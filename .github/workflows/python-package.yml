@@ -10,9 +10,9 @@ jobs:
       fail-fast: false
       matrix:
         os: ['ubuntu-latest', 'macOS-latest', 'windows-latest']
-        python-version: ['3.13', '3.12', '3.11', '3.10', '3.9', '3.8', '3.7']
+        python-version: ['3.14', '3.13', '3.12', '3.11', '3.10']
         compiler: ['gcc']
-        architecture: ['x86', 'x64']
+        architecture: ['x64']
 
     timeout-minutes: 30
 
