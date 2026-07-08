@@ -12,7 +12,13 @@ jobs:
         os: ['ubuntu-latest', 'macOS-latest', 'windows-latest']
         python-version: ['3.14', '3.13', '3.12', '3.11', '3.10']
         compiler: ['gcc']
-        architecture: ['x64']
+        architecture: ['x64', 'arm64']
+        exclude:
+        # exclude windows on arm64 and mac on x64
+          - os: 'windows-latest'
+            architecture: 'arm64'
+          - os: 'macOS-latest'
+            architecture: 'x64'
 
     timeout-minutes: 30
 
