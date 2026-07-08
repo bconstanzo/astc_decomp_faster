@@ -20,7 +20,7 @@ jobs:
     name: ${{ matrix.os }} ${{ matrix.architecture }} - ${{ matrix.python-version }}
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v7
 
       # Setup for Windows - installs the correct python architecture, x86 / x64
       - name: Set up Python (Win) ${{ matrix.python-version }} ${{ matrix.architecture }}
@@ -32,7 +32,7 @@ jobs:
 
       # Setup for Mac & Linux, both don't support architecture selection without using specific versions
       - name: Set up Python (Non-Win) ${{ matrix.python-version }}
-        uses: actions/setup-python@v1
+        uses: actions/setup-python@v6
         with:
           python-version: ${{ matrix.python-version }}
         if: runner.os != 'Windows'
